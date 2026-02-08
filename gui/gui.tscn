@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/VCR.tres" type="DynamicFont" id=1]
+[ext_resource path="res://gui/gui.gd" type="Script" id=2]
+
+[node name="gui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="spawnCubeButton" type="Button" parent="."]
+margin_left = 793.0
+margin_top = 488.0
+margin_right = 943.0
+margin_bottom = 527.0
+custom_fonts/font = ExtResource( 1 )
+text = "Spawn Cube"
+
+[node name="deleteAllButton" type="Button" parent="."]
+margin_left = 793.0
+margin_top = 445.0
+margin_right = 943.0
+margin_bottom = 483.0
+custom_fonts/font = ExtResource( 1 )
+text = "Delete All"
+
+[node name="CubesTitle" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 517.0
+margin_right = 71.0
+margin_bottom = 538.0
+custom_fonts/font = ExtResource( 1 )
+text = "Cubes:"
+
+[node name="CubesCount" type="Label" parent="."]
+margin_left = 82.0
+margin_top = 517.0
+margin_right = 111.0
+margin_bottom = 538.0
+custom_colors/font_color = Color( 0.0784314, 1, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
