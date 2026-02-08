@@ -10,9 +10,18 @@ func _ready():
 	proceedButton.visible = false
 	
 func _onLoadButtonClicked():
+	# load main scene
 	var scene = load("res://scenes/main.tscn")
 	var instance = scene.instance()
 	get_node("PRELOADHERE").add_child(instance)
+	print("Loaded main.tscn scene !")
+	# load cube
+	var cube = load("res://assets/cube/cube.tscn")
+	var Cubeinstance = cube.instance()
+	print("Loaded cube.tscn !")
+	
+	get_node("PRELOADHERE").add_child(Cubeinstance)
+	
 	print("Scene preloaded!")
 	proceedButton.visible = true
 	preloadButton.visible = false
