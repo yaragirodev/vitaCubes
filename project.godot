@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="vitaCubes"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/mainMenu.tscn"
 boot_splash/image="res://assets/l0_white.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )

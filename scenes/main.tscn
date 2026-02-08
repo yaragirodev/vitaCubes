@@ -40,7 +40,7 @@ height = 14.2517
 depth = 1.04526
 
 [node name="fps" type="Label3D" parent="env/backwall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.16931, 3.65516, 0.640557 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.14033, 3.65516, 0.640557 )
 modulate = Color( 0.0196078, 0.654902, 0, 1 )
 text = "60"
 font = SubResource( 2 )
