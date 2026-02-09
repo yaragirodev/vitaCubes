@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gui/gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/fpsCounter.gd" type="Script" id=3]
+[ext_resource path="res://scenes/DaD.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 412
@@ -77,6 +78,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.29941, 27.1758 )
 environment = SubResource( 1 )
 fov = 33.9
 far = 110.0
+script = ExtResource( 4 )
 
 [node name="gui" parent="." instance=ExtResource( 1 )]
 
