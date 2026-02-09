@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gui/gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/fpsCounter.gd" type="Script" id=3]
 [ext_resource path="res://scenes/DaD.gd" type="Script" id=4]
+[ext_resource path="res://assets/BGMusicL0.mp3" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=2]
 size = 412
@@ -86,3 +87,7 @@ script = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8048, 0 )
 
 [node name="spawnedStuff" type="Spatial" parent="."]
+
+[node name="musicStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Musicreverb"
