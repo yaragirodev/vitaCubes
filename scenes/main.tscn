@@ -34,7 +34,7 @@ background_energy = 12.4
 [node name="CSGBox" type="CSGBox" parent="env"]
 use_collision = true
 width = 29.7181
-height = 0.491139
+height = 0.324869
 depth = 18.4865
 material = SubResource( 4 )
 
@@ -56,6 +56,7 @@ material = ExtResource( 7 )
 
 [node name="fps" type="Label3D" parent="env/backwall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.14033, 3.65516, 0.640557 )
+shaded = true
 modulate = Color( 0.0196078, 0.654902, 0, 1 )
 text = "60"
 font = SubResource( 2 )
@@ -77,14 +78,26 @@ height = 14.2517
 depth = 22.5589
 material = ExtResource( 7 )
 
-[node name="SpotLight" type="SpotLight" parent="env"]
-transform = Transform( 0.951878, 0, 0.306476, 0, 1, 0, -0.306476, 0, 0.951878, 5.55917, 4.90498, 18.7052 )
+[node name="SpotLight2" type="SpotLight" parent="env"]
+transform = Transform( 0.984826, 0, -0.173545, 0, 1, 0, 0.173545, 0, 0.984826, -0.997343, 4.90498, 10.9486 )
 shadow_enabled = true
 spot_range = 28.4386
 spot_angle = 49.2756
 
-[node name="SpotLight2" type="SpotLight" parent="env"]
-transform = Transform( 0.984826, 0, -0.173545, 0, 1, 0, 0.173545, 0, 0.984826, -3.8245, 4.90498, 10.9486 )
+[node name="SpotLight5" type="SpotLight" parent="env"]
+transform = Transform( 0.984826, 0, -0.173545, 0, 1, 0, 0.173545, 0, 0.984826, -8.3026, 10.5059, 7.02686 )
+shadow_enabled = true
+spot_range = 28.4386
+spot_angle = 49.2756
+
+[node name="SpotLight3" type="SpotLight" parent="env"]
+transform = Transform( 0.984826, 0.173545, 7.5859e-09, 0, -4.37114e-08, 1, 0.173545, -0.984826, -4.30481e-08, -6.66951, 11.0321, 2.08277 )
+shadow_enabled = true
+spot_range = 28.4386
+spot_angle = 49.2756
+
+[node name="SpotLight4" type="SpotLight" parent="env"]
+transform = Transform( 0.984826, 0.173545, 7.5859e-09, 0, -4.37114e-08, 1, 0.173545, -0.984826, -4.30481e-08, 7.82764, 11.0321, 2.08277 )
 shadow_enabled = true
 spot_range = 28.4386
 spot_angle = 49.2756
@@ -93,6 +106,13 @@ spot_angle = 49.2756
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.29941, 27.1758 )
 environment = SubResource( 1 )
 fov = 33.9
+far = 110.0
+script = ExtResource( 4 )
+
+[node name="pCam2" type="Camera" parent="."]
+transform = Transform( 0.93089, -0.0132203, 0.36506, 0, 0.999345, 0.0361902, -0.365299, -0.0336891, 0.93028, 11.8442, 6.29941, 27.1758 )
+environment = SubResource( 1 )
+fov = 70.1
 far = 110.0
 script = ExtResource( 4 )
 

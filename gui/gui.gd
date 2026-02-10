@@ -3,8 +3,12 @@ extends Control
 onready var spawnButton = $spawnCubeButton
 onready var deleteButton = $deleteAllButton
 onready var musicButton = $MusicButton
-onready var spawned_spatial = mainLvl.get_node("spawnedStuff")
+onready var changeCam = $changeCamera
 onready var cubesCount: Label = $CubesCount
+
+onready var other_camera: Camera = mainLvl.get_node("pCam2")
+onready var main_camera: Camera = mainLvl.get_node("pCam")
+onready var spawned_spatial = mainLvl.get_node("spawnedStuff")
 onready var musicPlayer = mainLvl.get_node("musicStream")
 
 var boxScene = preload("res://assets/cube/cube.tscn")
@@ -13,6 +17,7 @@ func _ready():
 	spawnButton.connect("pressed", self, "_onSpawnButtonPressed")
 	deleteButton.connect("pressed", self, "_onDeleteButtonPressed")
 	musicButton.connect("pressed", self, "_onMusicButtonPressed")
+	changeCam.connect("pressed", self, "_onChangeButtonButtonPressed")
 	
 func _process(delta):
 	cubesCount.text = str(globalData.cubesTotal)
@@ -48,4 +53,16 @@ func _onMusicButtonPressed():
 		musicPlayer.stop()
 		globalData.isMusicPlaying = false
 		musicButton.text = "Music OFF"
+		
+func _onChangeButtonButtonPressed():
+	if globalData.isInOtherCamera == false:
+		main_camera.current = false
+		other_camera.current = true
+		globalData.isInOtherCamera = true
+		
+	else:
+		main_camera.current = true
+		other_camera.current = false
+		globalData.isInOtherCamera = false
+		
 
