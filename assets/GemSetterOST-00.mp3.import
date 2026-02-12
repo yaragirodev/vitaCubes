@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GemSetterOST-00.mp3-7982b1e64ebfc2c360b9d85bb7d25875.mp3str"
+
+[deps]
+
+source_file="res://assets/GemSetterOST-00.mp3"
+dest_files=[ "res://.import/GemSetterOST-00.mp3-7982b1e64ebfc2c360b9d85bb7d25875.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

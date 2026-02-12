@@ -32,4 +32,4 @@ func _onLoadButtonClicked():
 	littletext.text = "assets loaded, you can play!"
 
 func _onProceedButtonClicked():
-	get_tree().change_scene("res://scenes/main.tscn")
+	get_tree().change_scene("res://scenes/MainMenu.tscn")

@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/preloadMenu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 69
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 23
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 27
+font_data = ExtResource( 1 )
+
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+margin_right = 480.0
+margin_bottom = 272.0
+
+[node name="title" type="Label" parent="CanvasLayer/Panel"]
+margin_left = 64.3781
+margin_top = 40.0
+margin_right = 424.378
+margin_bottom = 112.0
+rect_rotation = 0.300897
+custom_fonts/font = SubResource( 1 )
+text = "VitaCubes"
+
+[node name="text1" type="Label" parent="CanvasLayer/Panel"]
+margin_left = 75.3781
+margin_top = 112.0
+margin_right = 411.378
+margin_bottom = 141.0
+custom_fonts/font = SubResource( 2 )
+text = "for comfortable gameplay, you need to preload all game stuff."
+align = 1
+autowrap = true
+
+[node name="littleWarning" type="Label" parent="CanvasLayer/Panel"]
+margin_left = 96.0
+margin_top = 216.0
+margin_right = 376.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 2 )
+text = "(the game may freeze for some time)"
+align = 1
+
+[node name="loadButton" type="Button" parent="CanvasLayer/Panel"]
+margin_left = 144.0
+margin_top = 160.0
+margin_right = 332.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 4 )
+text = "Load Assets"
+
+[node name="proceed" type="Button" parent="CanvasLayer/Panel"]
+visible = false
+margin_left = 88.0
+margin_top = 176.0
+margin_right = 384.0
+margin_bottom = 244.0
+custom_fonts/font = SubResource( 3 )
+text = "Start"
+
+[node name="PRELOADHERE" type="Spatial" parent="."]
