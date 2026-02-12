@@ -1,15 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gui/gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/fpsCounter.gd" type="Script" id=3]
 [ext_resource path="res://scenes/DaD.gd" type="Script" id=4]
 [ext_resource path="res://assets/BGMusicL0.mp3" type="AudioStream" id=5]
-[ext_resource path="res://assets/grid/texture_01.png" type="Texture" id=6]
-[ext_resource path="res://assets/materuials/grid.tres" type="Material" id=7]
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 6 )
+[ext_resource path="res://scenes/mainLevel.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=2]
 size = 412
@@ -28,15 +24,16 @@ background_color = Color( 0.670588, 0.603922, 0.603922, 1 )
 background_energy = 12.4
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 6 )
 
 [node name="env" type="Spatial" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="env"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.12524, 0 )
 use_collision = true
 width = 29.7181
-height = 0.324869
+height = 4.41203
 depth = 18.4865
-material = SubResource( 4 )
 
 [node name="CSGBox5" type="CSGBox" parent="env"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.9429, 0 )
@@ -44,7 +41,6 @@ use_collision = true
 width = 29.7181
 height = 0.491139
 depth = 18.4865
-material = ExtResource( 7 )
 
 [node name="backwall" type="CSGBox" parent="env"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.96227, -9.13067 )
@@ -52,11 +48,9 @@ use_collision = true
 width = 29.7181
 height = 14.2517
 depth = 1.04526
-material = ExtResource( 7 )
 
 [node name="fps" type="Label3D" parent="env/backwall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.14033, 3.65516, 0.640557 )
-shaded = true
 modulate = Color( 0.0196078, 0.654902, 0, 1 )
 text = "60"
 font = SubResource( 2 )
@@ -68,7 +62,6 @@ use_collision = true
 width = 1.1777
 height = 14.2517
 depth = 22.5589
-material = ExtResource( 7 )
 
 [node name="CSGBox4" type="CSGBox" parent="env"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4102, 7.07878, -2.1481 )
@@ -76,28 +69,9 @@ use_collision = true
 width = 1.1777
 height = 14.2517
 depth = 22.5589
-material = ExtResource( 7 )
 
 [node name="SpotLight2" type="SpotLight" parent="env"]
-transform = Transform( 0.984826, 0, -0.173545, 0, 1, 0, 0.173545, 0, 0.984826, -0.997343, 4.90498, 10.9486 )
-shadow_enabled = true
-spot_range = 28.4386
-spot_angle = 49.2756
-
-[node name="SpotLight5" type="SpotLight" parent="env"]
-transform = Transform( 0.984826, 0, -0.173545, 0, 1, 0, 0.173545, 0, 0.984826, -8.3026, 10.5059, 7.02686 )
-shadow_enabled = true
-spot_range = 28.4386
-spot_angle = 49.2756
-
-[node name="SpotLight3" type="SpotLight" parent="env"]
-transform = Transform( 0.984826, 0.173545, 7.5859e-09, 0, -4.37114e-08, 1, 0.173545, -0.984826, -4.30481e-08, -6.66951, 11.0321, 2.08277 )
-shadow_enabled = true
-spot_range = 28.4386
-spot_angle = 49.2756
-
-[node name="SpotLight4" type="SpotLight" parent="env"]
-transform = Transform( 0.984826, 0.173545, 7.5859e-09, 0, -4.37114e-08, 1, 0.173545, -0.984826, -4.30481e-08, 7.82764, 11.0321, 2.08277 )
+transform = Transform( 0.984826, 0, -0.173545, 0, 1, 0, 0.173545, 0, 0.984826, -0.986001, 4.90498, 16.4069 )
 shadow_enabled = true
 spot_range = 28.4386
 spot_angle = 49.2756
@@ -105,7 +79,7 @@ spot_angle = 49.2756
 [node name="pCam" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.29941, 27.1758 )
 environment = SubResource( 1 )
-fov = 33.9
+fov = 35.5
 far = 110.0
 script = ExtResource( 4 )
 

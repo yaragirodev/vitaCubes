@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/preloadMenu.gd" type="Script" id=2]
@@ -9,6 +9,10 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 14
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 23
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -24,8 +28,8 @@ script = ExtResource( 2 )
 layer = 100
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-margin_right = 960.0
-margin_bottom = 544.0
+margin_right = 472.0
+margin_bottom = 272.0
 
 [node name="title" type="Label" parent="CanvasLayer/Panel"]
 margin_left = 64.3781
@@ -60,7 +64,7 @@ margin_left = 144.0
 margin_top = 160.0
 margin_right = 332.0
 margin_bottom = 204.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Load Assets"
 
 [node name="proceed" type="Button" parent="CanvasLayer/Panel"]

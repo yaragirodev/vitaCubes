@@ -15,6 +15,10 @@ func _onLoadButtonClicked():
 	var instance = scene.instance()
 	get_node("PRELOADHERE").add_child(instance)
 	print("Loaded main.tscn scene !")
+	
+	if OS.get_name() == "Vita":
+		Engine.physics_ticks_per_second = 30
+	
 	# load cube
 	var cube = load("res://assets/cube/cube.tscn")
 	var Cubeinstance = cube.instance()
