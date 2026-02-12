@@ -5,6 +5,7 @@ onready var deleteButton = $deleteAllButton
 onready var musicButton = $MusicButton
 onready var changeCam = $changeCamera
 onready var cubesCount: Label = $CubesCount
+onready var versionLabel: Label = $version
 
 onready var other_camera: Camera = mainLvl.get_node("pCam2")
 onready var main_camera: Camera = mainLvl.get_node("pCam")
@@ -18,6 +19,12 @@ func _ready():
 	deleteButton.connect("pressed", self, "_onDeleteButtonPressed")
 	musicButton.connect("pressed", self, "_onMusicButtonPressed")
 	changeCam.connect("pressed", self, "_onChangeButtonButtonPressed")
+	
+	if OS.get_name() == "Vita":
+		versionLabel.text = "vita-" + str(globalData.current_ver )
+		
+	elif OS.get_name() == "Windows":
+		versionLabel.text = "win-" + str(globalData.current_ver )
 	
 func _process(delta):
 	cubesCount.text = str(globalData.cubesTotal)
