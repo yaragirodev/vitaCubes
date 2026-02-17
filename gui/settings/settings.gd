@@ -17,10 +17,19 @@ func _ready():
 func _onBounceChanged(value):
 	Cube.physics_material_override.bounce = value
 	print("all cubes changed bounciness to ", value)
+	
+func _onFOVchanged(value):
+	var cam = get_viewport().get_camera()
+	cam.fov = value
 
+func _onFrictionChanged(value):
+	Cube.physics_material_override.friction = value
+	print("all cubes changed friction to ", value)
 
 func _onBackPressed():
 	visible = false
 	# 1st getparent - canvasLayer; 2nd - spatial (main spatial)
 	gui_node.visible = true
 	globalData.isInSettings = false
+	
+
