@@ -10,19 +10,6 @@ func _ready():
 	# no shadows on vita (its bugged)
 	if OS.get_name() == "Vita":
 		light1.shadow_enabled = false
-		
-func openPause():
-	var pauseMenu = $CanvasLayer/pause
-	
-	if globalData.isInPauseRn == false:
-		pauseMenu.visible = true
-		get_tree().paused = true
-		globalData.isInPauseRn = true
-		
-	else:
-		pauseMenu.visible = false
-		get_tree().paused = false
-		globalData.isInPauseRn = false
 
 # i think this will help vita players
 func _process(delta):
@@ -32,6 +19,3 @@ func _process(delta):
 		# delete all cubes ):
 		for child in spawned_spatial.get_children():
 			child.queue_free()
-			
-	if Input.is_action_just_pressed("pause"):
-		openPause()
