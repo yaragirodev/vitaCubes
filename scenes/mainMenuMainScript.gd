@@ -40,3 +40,5 @@ func _onExitPressed():
 	
 func _goToScoreboard():
 	get_tree().change_scene("res://scenes/scoreboard.tscn")
+	
+

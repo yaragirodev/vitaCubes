@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/VCR.tres" type="DynamicFont" id=1]
 [ext_resource path="res://gui/gui.gd" type="Script" id=2]
 [ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/slowmo.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -34,9 +35,9 @@ custom_fonts/font = ExtResource( 1 )
 text = "Music OFF"
 
 [node name="changeCamera" type="Button" parent="."]
-margin_left = 376.0
+margin_left = 488.0
 margin_top = 40.0
-margin_right = 467.0
+margin_right = 579.0
 margin_bottom = 56.0
 custom_fonts/font = SubResource( 1 )
 disabled = true
@@ -49,6 +50,16 @@ margin_right = 466.0
 margin_bottom = 222.0
 custom_fonts/font = ExtResource( 1 )
 text = "Delete All"
+
+[node name="slowMo" type="Button" parent="."]
+margin_left = 432.0
+margin_top = 152.0
+margin_right = 464.0
+margin_bottom = 182.0
+custom_fonts/font = ExtResource( 1 )
+icon = ExtResource( 4 )
+icon_align = 1
+expand_icon = true
 
 [node name="CubesTitle" type="Label" parent="."]
 margin_left = 8.0

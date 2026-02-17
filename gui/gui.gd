@@ -6,6 +6,7 @@ onready var musicButton = $MusicButton
 onready var changeCam = $changeCamera
 onready var cubesCount: Label = $CubesCount
 onready var versionLabel: Label = $version
+onready var slowMoButton: Button = $slowMo
 
 onready var other_camera: Camera = mainLvl.get_node("pCam2")
 onready var main_camera: Camera = mainLvl.get_node("pCam")
@@ -19,6 +20,7 @@ func _ready():
 	deleteButton.connect("pressed", self, "_onDeleteButtonPressed")
 	musicButton.connect("pressed", self, "_onMusicButtonPressed")
 	changeCam.connect("pressed", self, "_onChangeButtonButtonPressed")
+	slowMoButton.connect("pressed", self, "_onSlowMoButtonPressed")
 	
 	if OS.get_name() == "Vita":
 		versionLabel.text = "vita-" + str(globalData.current_ver )
@@ -72,4 +74,12 @@ func _onChangeButtonButtonPressed():
 		other_camera.current = false
 		globalData.isInOtherCamera = false
 		
+func _onSlowMoButtonPressed():
+	if globalData.isSlowMoEnabled == false:
+		globalData.isSlowMoEnabled = true
+		Engine.time_scale = 0.2
+		
+	else:
+		globalData.isSlowMoEnabled = false
+		Engine.time_scale = 1.0
 
