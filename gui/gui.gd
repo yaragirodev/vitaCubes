@@ -93,6 +93,8 @@ func _onSlowMoButtonPressed():
 		Engine.time_scale = 1.0
 
 func _openSettings():
+	print("opening...")
 	visible = false
+	print("vanished")
 	globalData.isInSettings = true
 	gameSettings.visible = true

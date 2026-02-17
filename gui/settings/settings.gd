@@ -4,7 +4,8 @@ onready var bSlider = $settingsHere/VBoxContainer/bouncinessSlider
 onready var fSlider = $settingsHere/VBoxContainer/frictionSlider
 onready var fovChanger = $settingsHere/VBoxContainer/fov_here
 onready var backButton = $settingsHere/VBoxContainer/BACK
-onready var gameGui = mainLvl.get_node("gui")
+export (NodePath) var guiPath
+onready var gui_node = get_node(guiPath)
 
 func _ready():
 	# connecting connects
@@ -20,4 +21,6 @@ func _onBounceChanged(value):
 
 func _onBackPressed():
 	visible = false
-	globalData.isInSettings = true
+	# 1st getparent - canvasLayer; 2nd - spatial (main spatial)
+	gui_node.visible = true
+	globalData.isInSettings = false

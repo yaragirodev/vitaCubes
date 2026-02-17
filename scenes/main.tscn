@@ -110,3 +110,4 @@ environment = SubResource( 3 )
 layer = 50
 
 [node name="gameSetings" parent="CanvasLayer" instance=ExtResource( 7 )]
+guiPath = NodePath("../../gui")
