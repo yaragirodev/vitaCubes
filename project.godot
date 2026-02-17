@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 
 mainLvl="*res://scenes/main.tscn"
 globalData="*res://global/globalData.gd"
+Cube="*res://assets/cube/cube.tscn"
 
 [display]
 

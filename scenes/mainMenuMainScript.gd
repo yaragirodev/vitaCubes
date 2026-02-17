@@ -18,6 +18,9 @@ func _ready():
 		
 	if OS.get_name() == "Windows":
 		versionLabel.text = 'win-' + str(globalData.current_ver)
+		
+	if OS.get_name() == "Linux":
+		versionLabel.text = 'linux-' + str(globalData.current_ver)
 	
 	# set splash
 	getAndSetRandomSplash()
