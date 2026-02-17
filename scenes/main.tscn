@@ -92,6 +92,7 @@ far = 110.0
 script = ExtResource( 4 )
 
 [node name="gui" parent="." instance=ExtResource( 1 )]
+path_to_settings = NodePath("../CanvasLayer/gameSetings")
 
 [node name="spawnPoint" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8048, 0 )

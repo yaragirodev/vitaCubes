@@ -36,12 +36,20 @@ text = "Music OFF"
 
 [node name="changeCamera" type="Button" parent="."]
 margin_left = 488.0
-margin_top = 40.0
+margin_top = 32.0
 margin_right = 579.0
-margin_bottom = 56.0
+margin_bottom = 48.0
 custom_fonts/font = SubResource( 1 )
 disabled = true
 text = "Change Camera"
+
+[node name="openSettings" type="Button" parent="."]
+margin_left = 376.0
+margin_top = 40.0
+margin_right = 467.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 1 )
+text = "Open Settings"
 
 [node name="deleteAllButton" type="Button" parent="."]
 margin_left = 344.0

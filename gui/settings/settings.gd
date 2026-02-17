@@ -4,6 +4,7 @@ onready var bSlider = $settingsHere/VBoxContainer/bouncinessSlider
 onready var fSlider = $settingsHere/VBoxContainer/frictionSlider
 onready var fovChanger = $settingsHere/VBoxContainer/fov_here
 onready var backButton = $settingsHere/VBoxContainer/BACK
+onready var gameGui = mainLvl.get_node("gui")
 
 func _ready():
 	# connecting connects
@@ -15,3 +16,8 @@ func _ready():
 func _onBounceChanged(value):
 	Cube.physics_material_override.bounce = value
 	print("all cubes changed bounciness to ", value)
+
+
+func _onBackPressed():
+	visible = false
+	globalData.isInSettings = true
