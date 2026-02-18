@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/BGMusicL0.mp3" type="AudioStream" id=5]
 [ext_resource path="res://scenes/mainLevel.gd" type="Script" id=6]
 [ext_resource path="res://gui/settings/settings.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/BoxDeleter/deleter.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=2]
 size = 412
@@ -23,10 +24,6 @@ ambient_light_energy = 0.49
 background_mode = 1
 background_color = Color( 0.670588, 0.603922, 0.603922, 1 )
 background_energy = 12.4
-
-[sub_resource type="SpatialMaterial" id=4]
-flags_transparent = true
-albedo_color = Color( 1, 1, 1, 0 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 6 )
@@ -117,11 +114,5 @@ layer = 50
 [node name="gameSetings" parent="CanvasLayer" instance=ExtResource( 7 )]
 guiPath = NodePath("../../gui")
 
-[node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.2199, 14.0225 )
-visible = false
-use_collision = true
-width = 29.8645
-height = 14.0276
-depth = 0.385809
-material = SubResource( 4 )
+[node name="Area" parent="." instance=ExtResource( 8 )]
+transform = Transform( 958.78, 0, 0, 0, 1, 0, 0, 0, 853.857, 0, -20.8134, 0 )
