@@ -31,18 +31,18 @@ script = ExtResource( 6 )
 [node name="env" type="Spatial" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="env"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.12524, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.12524, -9.32876 )
 use_collision = true
 width = 29.7181
 height = 4.41203
-depth = 18.4865
+depth = 69.6768
 
 [node name="CSGBox5" type="CSGBox" parent="env"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.9429, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.9429, 26.3458 )
 use_collision = true
 width = 29.7181
 height = 0.491139
-depth = 18.4865
+depth = 75.3969
 
 [node name="backwall" type="CSGBox" parent="env"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.96227, -9.13067 )
@@ -58,22 +58,34 @@ text = "60"
 font = SubResource( 2 )
 script = ExtResource( 3 )
 
-[node name="CSGBox3" type="CSGBox" parent="env"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1169, 6.96227, -2.09146 )
-use_collision = true
-width = 1.1777
-height = 14.2517
-depth = 22.5589
-
 [node name="CSGBox4" type="CSGBox" parent="env"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4102, 7.07878, -2.1481 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4102, 7.07878, 26.8336 )
 use_collision = true
 width = 1.1777
 height = 14.2517
-depth = 22.5589
+depth = 72.3171
+
+[node name="CSGBox6" type="CSGBox" parent="env"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2304, 7.07878, 26.8336 )
+use_collision = true
+width = 1.1777
+height = 14.2517
+depth = 72.3171
 
 [node name="OmniLight" type="OmniLight" parent="env"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.90334, 4.15841 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.200076, 6.90334, 4.15841 )
+shadow_enabled = true
+omni_range = 29.853
+omni_attenuation = 3.13834
+
+[node name="OmniLight2" type="OmniLight" parent="env"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.200076, 6.90334, 33.6066 )
+shadow_enabled = true
+omni_range = 29.853
+omni_attenuation = 3.13834
+
+[node name="OmniLight3" type="OmniLight" parent="env"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.200076, 6.90334, 53.4647 )
 shadow_enabled = true
 omni_range = 29.853
 omni_attenuation = 3.13834
