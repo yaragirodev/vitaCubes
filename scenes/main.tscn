@@ -115,4 +115,4 @@ layer = 50
 guiPath = NodePath("../../gui")
 
 [node name="Area" parent="." instance=ExtResource( 8 )]
-transform = Transform( 958.78, 0, 0, 0, 1, 0, 0, 0, 853.857, 0, -20.8134, 0 )
+transform = Transform( 958.78, 0, 0, 0, 1, 0, 0, 0, 853.857, 0, -56.8461, 0 )
