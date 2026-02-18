@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://gui/gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=2]
@@ -23,6 +23,10 @@ ambient_light_energy = 0.49
 background_mode = 1
 background_color = Color( 0.670588, 0.603922, 0.603922, 1 )
 background_energy = 12.4
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 6 )
@@ -71,11 +75,11 @@ width = 1.1777
 height = 14.2517
 depth = 22.5589
 
-[node name="SpotLight2" type="SpotLight" parent="env"]
-transform = Transform( 0.984826, 0, -0.173545, 0, 1, 0, 0.173545, 0, 0.984826, -0.986001, 4.90498, 16.4069 )
+[node name="OmniLight" type="OmniLight" parent="env"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.90334, 4.15841 )
 shadow_enabled = true
-spot_range = 28.4386
-spot_angle = 49.2756
+omni_range = 29.853
+omni_attenuation = 3.13834
 
 [node name="pCam" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.29941, 27.1758 )
@@ -86,6 +90,7 @@ script = ExtResource( 4 )
 
 [node name="pCam2" type="Camera" parent="."]
 transform = Transform( 0.93089, -0.0132203, 0.36506, 0, 0.999345, 0.0361902, -0.365299, -0.0336891, 0.93028, 11.8442, 6.29941, 27.1758 )
+visible = false
 environment = SubResource( 1 )
 fov = 70.1
 far = 110.0
@@ -111,3 +116,12 @@ layer = 50
 
 [node name="gameSetings" parent="CanvasLayer" instance=ExtResource( 7 )]
 guiPath = NodePath("../../gui")
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.78631, 8.85542 )
+visible = false
+use_collision = true
+width = 29.8645
+height = 14.0276
+depth = 0.385809
+material = SubResource( 4 )
