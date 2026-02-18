@@ -11,10 +11,12 @@ onready var slowMoButton: Button = $slowMo
 onready var settingsButton: Button = $openSettings
 
 # other
-onready var other_camera: Camera = globalData.mainScene.get_node("pCam2")
-onready var main_camera: Camera = globalData.mainScene.get_node("pCam")
-onready var spawned_spatial = globalData.mainScene.get_node("spawnedStuff")
-onready var musicPlayer = globalData.mainScene.get_node("musicStream")
+export (NodePath) var mainScenePath
+onready var mainScene = get_node(mainScenePath)
+onready var other_camera: Camera = mainScene.get_node("pCam2")
+onready var main_camera: Camera = mainScene.get_node("pCam")
+onready var spawned_spatial = mainScene.get_node("spawnedStuff")
+onready var musicPlayer = mainScene.get_node("musicStream")
 export (NodePath) var path_to_settings
 onready var gameSettings = get_node(path_to_settings)
 

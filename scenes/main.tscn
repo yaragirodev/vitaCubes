@@ -96,6 +96,7 @@ far = 110.0
 script = ExtResource( 4 )
 
 [node name="gui" parent="." instance=ExtResource( 1 )]
+mainScenePath = NodePath("..")
 path_to_settings = NodePath("../CanvasLayer/gameSetings")
 
 [node name="spawnPoint" type="Spatial" parent="."]
@@ -117,7 +118,7 @@ layer = 50
 guiPath = NodePath("../../gui")
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.78631, 8.85542 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.2199, 14.0225 )
 visible = false
 use_collision = true
 width = 29.8645
