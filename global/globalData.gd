@@ -13,6 +13,6 @@ var isInOtherCamera = false
 var isInSettings = false
 
 # splahses!
-var splashes = ['now on vita!', 'OpenGL ES 2.0 sucks.', 'yellow cubes!', 'wow.. vita is 15 years old..']
+var splashes = ['now on vita!', 'OpenGL ES 2.0 sucks.', 'yellow cubes!', 'wow.. vita is 15 years old..', "Don't eat yellow snow",  "Better than Switch!", "Rear touchpad is useless."]
 
 # settings 
