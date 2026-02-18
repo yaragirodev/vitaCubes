@@ -2,7 +2,7 @@ extends Node
 
 # there's all GLOBAL variables of the game
 var cubesTotal = 0
-var current_ver = 1.2
+var current_ver = 1.3
 var fps = 0
 var mainScene = null
 
