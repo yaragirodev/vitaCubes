@@ -90,7 +90,6 @@ script = ExtResource( 4 )
 
 [node name="pCam2" type="Camera" parent="."]
 transform = Transform( 0.93089, -0.0132203, 0.36506, 0, 0.999345, 0.0361902, -0.365299, -0.0336891, 0.93028, 11.8442, 6.29941, 27.1758 )
-visible = false
 environment = SubResource( 1 )
 fov = 70.1
 far = 110.0

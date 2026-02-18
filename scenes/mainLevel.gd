@@ -12,6 +12,8 @@ func _ready():
 	# no shadows on vita (its bugged)
 	if OS.get_name() == "Vita":
 		light1.shadow_enabled = false
+		
+	globalData.mainScene = self
 
 # i think this will help vita players
 func _process(delta):

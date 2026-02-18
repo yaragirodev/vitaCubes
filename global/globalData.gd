@@ -4,6 +4,7 @@ extends Node
 var cubesTotal = 0
 var current_ver = 1.2
 var fps = 0
+var mainScene = null
 
 # gui features
 var isSlowMoEnabled = false

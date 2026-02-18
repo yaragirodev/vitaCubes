@@ -3,11 +3,13 @@ extends Control
 onready var preloadButton: Button = $CanvasLayer/Panel/loadButton
 onready var proceedButton: Button = $CanvasLayer/Panel/proceed
 onready var littletext: Label = $CanvasLayer/Panel/littleWarning
+export (SceneTree) var mainlvlPath
 
 func _ready():
 	preloadButton.connect("pressed", self, "_onLoadButtonClicked")
 	proceedButton.connect("pressed", self, "_onProceedButtonClicked")
 	proceedButton.visible = false
+	globalData.mainScene = mainlvlPath
 	
 func _onLoadButtonClicked():
 	# load main scene
