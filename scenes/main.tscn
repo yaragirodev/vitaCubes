@@ -75,7 +75,7 @@ depth = 72.3171
 [node name="OmniLight" type="OmniLight" parent="env"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.200076, 6.90334, 4.15841 )
 shadow_enabled = true
-omni_range = 29.853
+omni_range = 20.013
 omni_attenuation = 3.13834
 
 [node name="OmniLight2" type="OmniLight" parent="env"]
@@ -105,11 +105,10 @@ far = 110.0
 script = ExtResource( 4 )
 
 [node name="gui" parent="." instance=ExtResource( 1 )]
-mainScenePath = NodePath("..")
 path_to_settings = NodePath("../CanvasLayer/gameSetings")
 
 [node name="spawnPoint" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8048, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.4093, 0 )
 
 [node name="spawnedStuff" type="Spatial" parent="."]
 

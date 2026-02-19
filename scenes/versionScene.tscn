@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/godotLOGO.png" type="Texture" id=1]
+[ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/versionScene.gd" type="Script" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float speed : hint_range(0.5, 5.0) = 1.5;
+uniform float perspective : hint_range(0.0, 2.0) = 0.6;
+uniform float fps : hint_range(1.0, 60.0) = 15.0;
+
+void fragment() {
+    float stepped_time = floor(TIME * fps) / fps;
+
+    float angle = stepped_time * speed;
+    vec2 suv = UV - 0.5;
+
+    float ca = cos(angle);
+    float sa = sin(angle);
+
+    float denom = ca - suv.x * sa * perspective;
+
+    if (abs(denom) < 0.001) {
+        COLOR = vec4(0.0);
+    } else {
+        float px = suv.x / denom;
+        float py = suv.y * (1.0 + px * sa * perspective);
+
+        vec2 tex_uv = vec2(px, py) + 0.5;
+
+        if (tex_uv.x < 0.0 || tex_uv.x > 1.0 ||
+            tex_uv.y < 0.0 || tex_uv.y > 1.0) {
+            COLOR = vec4(0.0);
+        } else {
+            COLOR = texture(TEXTURE, tex_uv);
+        }
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/speed = 1.5
+shader_param/perspective = 0.6
+shader_param/fps = 15.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 480.0
+margin_bottom = 272.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource( 2 )
+margin_left = 112.0
+margin_top = 40.0
+margin_right = 369.0
+margin_bottom = 144.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="text1" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 144.0
+margin_right = 384.0
+margin_bottom = 173.0
+custom_fonts/font = SubResource( 3 )
+text = "made with 
+Godot Engine v3.5.rc5.custom_build"
+align = 1
+autowrap = true
+
+[node name="text3" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 200.0
+margin_right = 376.0
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 3 )
+text = "game by yaragirodev (//LevelZer0)"
+align = 1
+autowrap = true
+
+[node name="text2" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 173.0
+margin_right = 216.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0.196078, 1, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "by SonicMastr"
+align = 1
+autowrap = true
+
+[node name="back" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 232.0
+margin_right = 56.0
+margin_bottom = 264.0
+custom_fonts/font = SubResource( 5 )
+text = "Back"
+flat = true
+align = 0

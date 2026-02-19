@@ -9,7 +9,7 @@ func _ready():
 	#button connects
 	playButton.connect('pressed', self, '_onPlayPressed')
 	exitButton.connect('pressed', self, '_onExitPressed')
-	versionLabel.connect('pressed', self, '_goToExtendedVersion')
+	versionLabel.connect('pressed', self, '_goToVersionScene')
 	
 	# version set
 	if OS.get_name() == "Vita":
@@ -40,5 +40,6 @@ func _onExitPressed():
 	print("BYE")
 	get_tree().quit()
 	
-	
+func _goToVersionScene():
+	get_tree().change_scene("res://scenes/versionScene.tscn")
 
