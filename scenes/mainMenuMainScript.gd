@@ -4,7 +4,6 @@ onready var splashLabel: Label = $splash
 onready var playButton: Button = $Play
 onready var exitButton: Button = $Exit
 onready var versionLabel: Label = $version
-onready var scoreboardbutton: Button = $scoreboard
 
 func _ready():
 	#button connects
@@ -41,7 +40,5 @@ func _onExitPressed():
 	print("BYE")
 	get_tree().quit()
 	
-func _goToScoreboard():
-	get_tree().change_scene("res://scenes/scoreboard.tscn")
 	
 
