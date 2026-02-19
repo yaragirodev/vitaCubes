@@ -3,13 +3,13 @@ extends Control
 onready var splashLabel: Label = $splash
 onready var playButton: Button = $Play
 onready var exitButton: Button = $Exit
-onready var versionLabel: Label = $version
+onready var versionLabel = $version
 
 func _ready():
 	#button connects
 	playButton.connect('pressed', self, '_onPlayPressed')
 	exitButton.connect('pressed', self, '_onExitPressed')
-	scoreboardbutton.connect('pressed', self, '_goToScoreboard')
+	versionLabel.connect('pressed', self, '_goToExtendedVersion')
 	
 	# version set
 	if OS.get_name() == "Vita":
