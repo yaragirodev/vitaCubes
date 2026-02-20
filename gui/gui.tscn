@@ -29,27 +29,26 @@ custom_fonts/font = ExtResource( 1 )
 text = "Spawn Cube"
 
 [node name="MusicButton" type="Button" parent="."]
-margin_left = 360.0
+margin_left = 488.0
 margin_top = 8.0
-margin_right = 471.0
+margin_right = 599.0
 margin_bottom = 32.0
 custom_fonts/font = ExtResource( 1 )
 text = "Music OFF"
 
 [node name="changeCamera" type="Button" parent="."]
-margin_left = 488.0
+margin_left = 384.0
 margin_top = 32.0
-margin_right = 579.0
+margin_right = 475.0
 margin_bottom = 48.0
 custom_fonts/font = SubResource( 1 )
-disabled = true
 text = "Change Camera"
 
 [node name="openSettings" type="Button" parent="."]
-margin_left = 376.0
-margin_top = 40.0
-margin_right = 467.0
-margin_bottom = 56.0
+margin_left = 384.0
+margin_top = 8.0
+margin_right = 475.0
+margin_bottom = 24.0
 custom_fonts/font = SubResource( 1 )
 text = "Open Settings"
 
