@@ -8,6 +8,7 @@ func _ready():
 	preloadButton.connect("pressed", self, "_onLoadButtonClicked")
 	proceedButton.connect("pressed", self, "_onProceedButtonClicked")
 	proceedButton.visible = false
+	OS.low_processor_usage_mode = false
 	
 func _onLoadButtonClicked():
 	# load main scene

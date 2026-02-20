@@ -40,6 +40,7 @@ rect_rotation = 0.300897
 custom_fonts/font = SubResource( 1 )
 text = "VitaCubes"
 align = 1
+uppercase = true
 
 [node name="text1" type="Label" parent="CanvasLayer/Panel"]
 margin_left = 75.3781
