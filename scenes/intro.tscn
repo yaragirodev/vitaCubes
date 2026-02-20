@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/l0ci0001-0195.webm" type="VideoStream" id=1]
+[ext_resource path="res://scenes/intro.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 480.0
+margin_bottom = 272.0
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
