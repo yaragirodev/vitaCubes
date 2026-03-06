@@ -1,9 +1,8 @@
 extends Spatial
 
 # lights
-onready var light1 = $env/OmniLight
-onready var light2 = $env/OmniLight2
-onready var light3 = $env/OmniLight3
+onready var light1 = $env/SpotLight
+
 
 # spatial
 onready var spawned_spatial = get_node("spawnedStuff")
@@ -15,12 +14,10 @@ var OnPC = false
 func _ready():
 	# is this vita?
 	isVita = OS.get_name() == "Vita"
-	OnPC = OS.get_name() == "Windows"
 	# no shadows on vita (its bugged)
 	if OS.get_name() == "Vita":
 		light1.shadow_enabled = false
-		light2.shadow_enabled = false
-		light3.shadow_enabled = false
+		
 		
 	globalData.mainScene = self
 

@@ -1,0 +1,42 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float speed : hint_range(0.5, 5.0) = 1.5;
+uniform float perspective : hint_range(0.0, 2.0) = 0.6;
+uniform float fps : hint_range(1.0, 60.0) = 15.0;
+
+void fragment() {
+    float stepped_time = floor(TIME * fps) / fps;
+
+    float angle = stepped_time * speed;
+    vec2 suv = UV - 0.5;
+
+    float ca = cos(angle);
+    float sa = sin(angle);
+
+    float denom = ca - suv.x * sa * perspective;
+
+    if (abs(denom) < 0.001) {
+        COLOR = vec4(0.0);
+    } else {
+        float px = suv.x / denom;
+        float py = suv.y * (1.0 + px * sa * perspective);
+
+        vec2 tex_uv = vec2(px, py) + 0.5;
+
+        if (tex_uv.x < 0.0 || tex_uv.x > 1.0 ||
+            tex_uv.y < 0.0 || tex_uv.y > 1.0) {
+            COLOR = vec4(0.0);
+        } else {
+            COLOR = texture(TEXTURE, tex_uv);
+        }
+    }
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/speed = 1.5
+shader_param/perspective = 0.6
+shader_param/fps = 15.0

@@ -35,6 +35,9 @@ func _ready():
 		
 	elif OS.get_name() == "Windows":
 		versionLabel.text = "win-" + str(globalData.current_ver )
+		
+		if OS.get_name() == "X11":
+			versionLabel.text = 'gnu-' + str(globalData.current_ver)
 
 # cubes counter
 func _process(delta):
