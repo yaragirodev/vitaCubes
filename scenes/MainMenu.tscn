@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/VCR.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/mainMenuMainScript.gd" type="Script" id=2]
@@ -20,6 +20,38 @@ font_data = ExtResource( 1 )
 size = 11
 font_data = ExtResource( 1 )
 
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("name:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -2.1 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "menuTitle"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("name:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3.5 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ -2.1, 2.1, -2.1 ]
+}
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,39 +62,41 @@ margin_right = 480.0
 margin_bottom = 272.0
 
 [node name="name" type="Label" parent="."]
-margin_left = 184.0
-margin_top = 104.0
-margin_right = 444.0
-margin_bottom = 143.0
+margin_left = 112.646
+margin_top = 52.7502
+margin_right = 372.646
+margin_bottom = 91.7502
+rect_rotation = -2.1
+rect_pivot_offset = Vector2( 130, 20 )
 custom_fonts/font = SubResource( 1 )
 text = "VitaCubes!"
 
 [node name="splash" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0.521569 )
-margin_left = 184.0
-margin_top = 152.0
-margin_right = 432.0
-margin_bottom = 168.0
+margin_left = 112.646
+margin_top = 100.75
+margin_right = 360.646
+margin_bottom = 116.75
 custom_colors/font_color = Color( 0, 0.952941, 0.054902, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "splash"
 align = 1
 
 [node name="Play" type="Button" parent="."]
-margin_left = 56.0
-margin_top = 96.0
-margin_right = 160.0
-margin_bottom = 136.0
+margin_left = 200.0
+margin_top = 136.0
+margin_right = 304.0
+margin_bottom = 176.0
 custom_fonts/font = SubResource( 3 )
 text = "Play!"
 flat = true
 align = 0
 
 [node name="Exit" type="Button" parent="."]
-margin_left = 56.0
-margin_top = 136.0
-margin_right = 160.0
-margin_bottom = 176.0
+margin_left = 200.0
+margin_top = 176.0
+margin_right = 304.0
+margin_bottom = 216.0
 custom_fonts/font = SubResource( 3 )
 text = "Exit"
 flat = true
@@ -82,3 +116,8 @@ align = 0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="menu" type="AnimationPlayer" parent="."]
+autoplay = "menuTitle"
+anims/RESET = SubResource( 5 )
+anims/menuTitle = SubResource( 6 )

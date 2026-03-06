@@ -11,8 +11,9 @@ var isSlowMoEnabled = false
 var isMusicPlaying = false
 var isInOtherCamera = false
 var isInSettings = false
+var isVsyncOn = true
 
 # splahses!
-var splashes = ['now on vita!', 'OpenGL ES 2.0 sucks.', 'yellow cubes!', 'wow.. vita is 15 years old..', "Don't eat yellow snow",  "Better than Switch!", "Rear touchpad is useless."]
+var splashes = ['now on vita!', 'no linux version :(', 'OpenGL ES 2.0 sucks.', 'yellow cubes!', 'wow.. vita is 15 years old..', "Don't eat yellow snow",  "Better than Switch!", "Rear touchpad is useless."]
 
 # settings 

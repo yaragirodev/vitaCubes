@@ -4,6 +4,7 @@ onready var bSlider = $settingsHere/VBoxContainer/bouncinessSlider
 onready var fSlider = $settingsHere/VBoxContainer/frictionSlider
 onready var fovChanger = $settingsHere/VBoxContainer/fov_here
 onready var backButton = $settingsHere/VBoxContainer/BACK
+onready var vsyncTumbler = $settingsHere/VBoxContainer/vsyncOnOff
 export (NodePath) var guiPath
 onready var gui_node = get_node(guiPath)
 
@@ -13,6 +14,7 @@ func _ready():
 	fSlider.connect('value_changed', self, '_onFrictionChanged')
 	fovChanger.connect('value_changed', self, '_onFOVchanged')
 	backButton.connect('pressed', self, '_onBackPressed')
+	vsyncTumbler.connect('pressed', self, '_vsynctoggle')
 
 func _onBounceChanged(value):
 	Cube.physics_material_override.bounce = value
@@ -33,3 +35,15 @@ func _onBackPressed():
 	globalData.isInSettings = false
 	
 
+func _vsynctoggle():
+	if globalData.isVsyncOn == true:
+		print("turning vsync off...")
+		OS.vsync_enabled = false
+		globalData.isVsyncOn = false
+		vsyncTumbler.text = "OFF"
+		
+	else:
+		print("turning vsync on...")
+		OS.vsync_enabled = true
+		globalData.isVsyncOn = true
+		vsyncTumbler.text = "ON"
